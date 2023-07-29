@@ -1,0 +1,124 @@
+<?php
+    
+    session_start();
+    define("APPURL", "http://localhost/forum");
+
+
+;?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome To Forum</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous" />
+      
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+      
+    <link href="css/forum.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+<!-- Header Started -->
+
+<header class="container-lg ">
+      <!-- <h1>Hello Forum User</h1> -->
+
+      <!-- Navbar Started -->
+
+      <nav class="navbar navbar-expand-lg rounded-3 p-3 mx-1 shadow" style="background-color: #fff;">
+        <div class="container-fluid">
+           <a class="navbar-brand m-0 p-0" href="#">
+      		<img src="img/2.png" alt="" width="45" height="45" class="ms-4">
+    	    </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Option List -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+              <li class="nav-item mx-3">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">Forum</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">GPT</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">Media</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">Register</a>
+              </li>
+
+
+              <!-- Dropdown Started -->
+
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                 
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+
+
+                    <!-- Dropdown Ended -->
+
+
+
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li> -->
+            </ul>
+            <form class="d-flex" role="search">
+              <!-- <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search" /> -->
+              <button class="btn btn-outline-success" type="submit">
+                Create Topic
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+<!-- Header Ended -->
