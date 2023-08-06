@@ -1,8 +1,8 @@
 			<!-- Sidebar counted as footer1 -->
-			<!-- <div class="col-md-12 col-lg-4">
-			<div class="sidebar">		 -->
+			<div class="col-md-12 col-lg-4">
+			<div class="sidebar">		
 					
-				<div class="block shadow">
+				<div class="block shadow rounded-2">
 					<h5 class="ms-3 pt-3">Categories</h5>
                     <hr class="fw-bolder text-dark mx-2">
 
@@ -17,7 +17,7 @@
 					</div>
 				</div>
 
-					<div class="block shadow" >
+					<div class="block shadow mt-3 rounded-2" >
 
 						<h5 class="pt-2 ms-3">Forum Statistics</h5>
 

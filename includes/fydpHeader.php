@@ -34,10 +34,10 @@
 
       <!-- Navbar Started -->
 
-      <nav class="navbar navbar-expand-lg rounded-3 p-3 mx-1 shadow" style="background-color: #fff;">
+      <nav class="navbar navbar-expand-lg rounded-2 p-3 mx-1 shadow" style="background-color: #fff;">
         <div class="container-fluid">
-           <a class="navbar-brand m-0 p-0" href="#">
-      		<img src="img/2.png" alt="" width="45" height="45" class="ms-4">
+           <a class="navbar-brand m-0 p-0" href="<?php echo APPURL; ?>"">
+      		<img src="2.png" alt="" width="45" height="45" class="ms-4" href="">
     	    </a>
           <button
             class="navbar-toggler"
@@ -54,9 +54,39 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
-              <li class="nav-item mx-3">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <li class="nav-item mx-3">
+                <a class="nav-link active" aria-current="page" href="<?php echo APPURL; ?>index.php">Home</a>
               </li>
+
+            <?php if(isset($_SESSION['username'])) : ?>
+              
+
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="<?php echo APPURL; ?>../topics/create.php">Create Topic</a>
+              </li>
+
+              <!-- Dropdown Started -->
+
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <?php echo $_SESSION['username']; ?>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="<?php echo APPURL; ?>/auth/logout.php">logout</a>
+                  </li>
+
+
+                   <?php else : ?>
 
               <li class="nav-item mx-3">
                 <a class="nav-link" href="#">Blog</a>
@@ -70,33 +100,24 @@
               <li class="nav-item mx-3">
                 <a class="nav-link" href="#">Media</a>
               </li>
-              <li class="nav-item mx-3">
-                <a class="nav-link" href="#">Register</a>
+              
+
+
+              
+
+                 
+
+                  <li class="nav-item ms-3">
+                <a class="nav-link" href="<?php echo APPURL; ?>/auth/register.php">Register</a>
+              </li>
+                  <li class="nav-item ms-3">
+                <a class="nav-link" href="<?php echo APPURL; ?>/auth/login.php">login</a>
               </li>
 
-
-              <!-- Dropdown Started -->
-
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                 
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
                 </ul>
               </li>
 
+              <?php endif; ?>
 
                     <!-- Dropdown Ended -->
 
@@ -112,9 +133,9 @@
                 type="search"
                 placeholder="Search"
                 aria-label="Search" /> -->
-              <button class="btn btn-outline-success" type="submit">
+              <!-- <a class="btn btn-outline-success" type="submit" href="create.php">
                 Create Topic
-              </button>
+              </a> -->
             </form>
           </div>
         </div>

@@ -169,8 +169,8 @@
 			</div>
 
 			<!-- Sidebar counted as footer1 -->
-			<div class="col-md-12 col-lg-4">
-			<div class="sidebar">		
+			<!-- <div class="col-md-12 col-lg-4">
+			<div class="sidebar">		 -->
 
 
 

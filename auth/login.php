@@ -1,7 +1,11 @@
-<?php require "../includes/header.php"; ?>
+<?php require "../includes/fydpHeader.php"; ?>
 <?php require "../config/config.php"; ?>
 
 <?php 
+
+if(isset($_SESSION['username'])){
+    header("location: ".APPURL."");
+}
 
 if (isset($_POST['submit'])) {
          if(empty($_POST["email"]) or empty($_POST["password"])) {
@@ -25,6 +29,7 @@ if (isset($_POST['submit'])) {
           if (password_verify($password, $fetch['password'])) {
 
             $_SESSION['username'] = $fetch['username'];
+            $_SESSION['name'] = $fetch['name'];
             $_SESSION['user_id'] = $fetch['id'];
             $_SESSION['email'] = $fetch['email'];
             // $_SESSION['username'] = $fetch['username'];
@@ -45,36 +50,43 @@ if (isset($_POST['submit'])) {
 ?>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="main-col">
-                <div class="block">
-                    <h1 class="pull-left">login</h1>
-                    <h4 class="pull-right">A Simple Forum</h4>
-                    <div class="clearfix"></div>
-                    <hr>
-                    <form role="form" method="post" action="login.php">
+    <!-- Main Started -->
 
-                        <div class="form-group">
-                            <label>Email Address*</label> <input type="email" class="form-control" name="email"
-                                placeholder="Enter Your Email Address">
-                        </div>
+    <div class="container mt-4">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="main-col">
+					<div class="block shadow-lg shadow-md rounded-2">
 
-                        <div class="form-group">
-                            <label>Password*</label> <input type="password" class="form-control" name="password"
-                                placeholder="Enter A Password">
-                        </div>
-
-                        <input name="submit" type="submit" class="color btn btn-default" value="login" />
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div id="sidebar">
+						<h4 class="float-start mt-3 mb-0 ms-3">Login</h4>
+						<h6 class="float-end mt-3 mb-0 me-3 text-muted">A Simple Forum</h6>
+                        
+						<div class="clearfix"></div>
+                        <div></div>
+                        
+						<hr class="mx-3 mb-3">
 
 
+						<form class="px-3" role="form"  method="post" action="login.php">
+							
+							<div class="form-group">
+							<label  class="fw-bold mb-2 mt-2">Email Address*</label> <input type="email" class="form-control mb-3"
+							name="email" placeholder="Enter Your Email Address">
+							</div>
+					
+					<div class="form-group">
+                        <label  class="fw-bold mb-2">Password*</label> <input type="password" class="form-control mb-3"
+                    name="password" placeholder="Enter A Password">
+                    </div>
+	
+			        <input name="submit" type="submit" class="btn btn-primary mb-3" value="Login" />
+        </form>
+					</div>
+				</div>
+			</div>
 
 
-                <?php require "../includes/footer.php";?>
+
+
+
+                <?php require "../includes/fydpFooter.php";?>
