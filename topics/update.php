@@ -6,6 +6,18 @@ if(!isset($_SESSION['username'])){
     header("location: ".APPURL."");
 }
 
+//Data grapping
+    if(isset($_GET['id'])){
+        
+	    	$id = $_GET['id'];
+
+		    $select =  $conn->query("SELECT* FROM topics WHERE id='$id' ");
+		    $select->execute();
+
+		    $topic = $select->fetch(PDO::FETCH_OBJ);
+}
+
+
     if (isset($_POST['submit'])) {
          if(empty($_POST["title"]) or empty($_POST["category"]) or empty($_POST["body"]) ) {
         
@@ -21,9 +33,9 @@ if(!isset($_SESSION['username'])){
 
         // $dir = "img/".basename($avatar);
 
-        $insert = $conn->prepare("INSERT INTO topics ( title, category, body, user_name) VALUES (:title, :category, :body, :user_name)");
+        $update = $conn->prepare("UPDATE topics SET title =:title, category=:category,body=:body,user_name=:user_name ");
 
-        $insert->execute([
+        $update->execute([
 
             ":title" => $title,
             ":category" => $category,
@@ -58,15 +70,14 @@ if(!isset($_SESSION['username'])){
 						<hr class="mx-3 mb-3">
 
 
-						<form class="px-3" role="form" method="POST" action="../topics/create.php">
+						<form class="px-3" role="form" method="POST" action="../topics/update.php?id=<?php echo $id; ?>">
 							<div class="form-group">
 								<label  mb-3class="fw-bold mb-2 mt-2">Topic Title</label>
-								<input type="text" class="form-control mb-3" name="title" placeholder="Enter Post Title">
+								<input type="text" value="<?php echo $topic->title; ?>" class="form-control mb-3" name="title" placeholder="Enter Post Title">
 							</div>
 							<div class="form-group">
 								<label  mb-3class="fw-bold mb-2 mt-2">Category</label>
 								<select class="form-control mb-3" name="category">
-									
 									<option value="Design">Design</option>
 									<option value="Development">Development</option>
 									<option value="Business & Marketing">Business & Marketing</option>
@@ -80,7 +91,7 @@ if(!isset($_SESSION['username'])){
                                     <!-- =======CK Editor======= -->
 									
                                     <!-- <textarea id="body" rows="10" cols="80" class="form-control mb-3" name="body"></textarea> -->
-                                    <textarea  name="body" placeholder="" class="form-control mb-3" rows="12" cols="50"></textarea>
+                                    <textarea  name="body" placeholder="" class="form-control mb-3" rows="12" cols="50"><?php echo $topic->body; ?></textarea>
 									<!-- <script>CKEDITOR.replace('body');</script> -->
                                     <script>
                                         window.onload = function() {
@@ -89,7 +100,7 @@ if(!isset($_SESSION['username'])){
                                     </script>
 
 								</div>
-							<button type="submit" name="submit" class="btn btn-primary mb-3 mt-4">Create</button>
+							<button type="submit" name="submit" class="btn btn-primary mb-3 mt-4">Update</button>
 						</form>
 					</div>
 				</div>

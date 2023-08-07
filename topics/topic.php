@@ -50,7 +50,7 @@
 						<div class="row border-start border-bottom border-top rounded-start-3 my-2">
 							<div class="col-md-4">
 								<div class="user-info  my-3">
-									<img class="avatar float-start mx-3" src="../img/<?php echo $singleTopic->user_image; ?>"  width="75" height="75"/>
+									<img class="avatar float-start mx-3 mb-3 rounded-1" src="../img/<?php echo $singleTopic->user_image; ?>"  width="75" height="75"/>
 									<ul class="list-unstyled">
 										<li><strong><?php echo $singleTopic->user_name; ?></strong></li>
 										<li><?php echo $count->count_topics; ?> Posts</li>
@@ -60,9 +60,12 @@
 							</div>
 							<div class="col-md-8 bg-body-secondary">
 								<div class="topic-content float-start p-2">
+
 									<p><?php echo $singleTopic->body; ?></p>
-									<a class="btn btn-danger" href="delete.php?id=<?php echo $singleTopic->id; ?>" role="button">Delete</a>
-									<a class="btn btn-warning" href="edit.php" role="button">Edit</a>
+
+									<a class="btn btn-danger p-1" href="delete.php?id=<?php echo $singleTopic->id; ?>" role="button">Delete</a>
+									<a class="btn btn-warning p-1" href="update.php?id=<?php echo $singleTopic->id; ?>" role="button">Update</a>
+
 								</div>
 							</div>
 							
@@ -75,7 +78,7 @@
 						<div class="row border-start border-bottom border-top rounded-start-3 my-2">
 							<div class="col-md-4">
 								<div class="user-info  my-3">
-									<img class="avatar float-start mx-3" src="../img/<?php echo $reply->user_image; ?>"  width="75" height="75"/>
+									<img class="avatar float-start mx-3 mb-3 rounded-1" src="../img/<?php echo $reply->user_image; ?>"  width="75" height="75"/>
 									<ul class="list-unstyled">
 										<li><strong><?php echo $reply->user_name; ?></strong></li>
 										<!-- <li>43 Posts</li> -->
