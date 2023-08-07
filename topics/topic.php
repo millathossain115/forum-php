@@ -59,10 +59,13 @@
 								</div>
 							</div>
 							<div class="col-md-8 bg-body-secondary">
-								<div class="topic-content float-end p-2">
+								<div class="topic-content float-start p-2">
 									<p><?php echo $singleTopic->body; ?></p>
+									<a class="btn btn-danger" href="#" role="button">Delete</a>
+									<a class="btn btn-warning" href="#" role="button">Edit</a>
 								</div>
 							</div>
+							
 						</div>
 					</li>
 
@@ -75,13 +78,13 @@
 									<img class="avatar float-start mx-3" src="../img/<?php echo $reply->user_image; ?>"  width="75" height="75"/>
 									<ul class="list-unstyled">
 										<li><strong><?php echo $reply->user_name; ?></strong></li>
-										<li>43 Posts</li>
+										<!-- <li>43 Posts</li> -->
 										<li><a href="profile.php">Profile</a>
 									</ul>
 								</div>
 							</div>
 							<div class="col-md-8 bg-body-secondary">
-								<div class="topic-content float-end p-2">
+								<div class="topic-content float-start p-2">
 									<p><?php echo $reply->reply; ?></p>
 								</div>
 							</div>
