@@ -7,7 +7,7 @@
 	topics.user_name AS user_name,
 	topics.user_image AS user_image,
 	topics.created_at AS created_at,
-	COUNT(replies.topic_id) AS count_replies FROM topics JOIN replies ON
+	COUNT(replies.topic_id) AS count_replies FROM topics LEFT JOIN replies ON
 	topics.id = replies.topic_id GROUP BY(replies.topic_id)");
 
 	$topics->execute();
@@ -55,7 +55,7 @@
 
 							<div class="col-md-10 ">
 								<div class="">
-									<h5 class="mt-3 mb-0"><a class="text-decoration-none" href="topic.html"><?php echo $topic->title; ?></a></h5>
+									<h5 class="mt-3 mb-0"><a class="text-decoration-none" href="topic.php?id=<?php echo $topic->$id; ?>"><?php echo $topic->title; ?></a></h5>
 
 									<div class="topic-info">
 										<a class="text-decoration-none" href="category.html"><?php echo $topic->category; ?></a> >> <a class="text-decoration-none" href="profile.html"><?php echo $topic->user_name ; ?></a> >> Posted on: <?php echo $topic->created_at ; ?> 
@@ -65,7 +65,6 @@
 								</div>
 							</div>
 						</div>
-            				<hr class="fw-bolder text-white mx-4">
 							</li>
 							<?php endforeach;?>
 							
@@ -75,7 +74,8 @@
 							<!--================== Topic 4 ==================-->
 			
 						</ul>
-						
+						<hr class="fw-bolder text-white mx-4">
+
 					</div>
 				</div>
 			</div>
