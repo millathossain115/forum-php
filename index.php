@@ -55,7 +55,7 @@
 
 							<div class="col-md-10 ">
 								<div class="">
-									<h5 class="mt-3 mb-0"><a class="text-decoration-none" href="topic.php?id=<?php echo $topic->$id; ?>"><?php echo $topic->title; ?></a></h5>
+									<h5 class="mt-3 mb-0"><a class="text-decoration-none" href="../forum/topics/topic.php?id=<?php echo $topic->id; ?>" > <?php echo $topic->title; ?></a></h5>
 
 									<div class="topic-info">
 										<a class="text-decoration-none" href="category.html"><?php echo $topic->category; ?></a> >> <a class="text-decoration-none" href="profile.html"><?php echo $topic->user_name ; ?></a> >> Posted on: <?php echo $topic->created_at ; ?> 
