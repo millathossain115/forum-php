@@ -61,8 +61,8 @@
 							<div class="col-md-8 bg-body-secondary">
 								<div class="topic-content float-start p-2">
 									<p><?php echo $singleTopic->body; ?></p>
-									<a class="btn btn-danger" href="#" role="button">Delete</a>
-									<a class="btn btn-warning" href="#" role="button">Edit</a>
+									<a class="btn btn-danger" href="delete.php?id=<?php echo $singleTopic->id; ?>" role="button">Delete</a>
+									<a class="btn btn-warning" href="edit.php" role="button">Edit</a>
 								</div>
 							</div>
 							
