@@ -5,10 +5,24 @@
 if(isset($_GET['id'])){
 		$id = $_GET['id'];
 
-		$delete =  $conn->query("DELETE FROM topics WHERE id='$id' ");
-		$delete->execute();
+            $select =  $conn->query("SELECT* FROM topics WHERE id='$id' ");
+		    $select->execute();
+		    $topic = $select->fetch(PDO::FETCH_OBJ);
 
-		header("location: ".APPURL."");
+            if($topic->user_name !== $_SESSION['username']){
+
+                header("location: ".APPURL."");
+
+            }else{
+
+                $delete =  $conn->query("DELETE FROM topics WHERE id='$id' ");
+		        $delete->execute();
+
+		        header("location: ".APPURL."");
+            }
+    
+
+		
 }
 
 

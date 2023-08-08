@@ -58,17 +58,20 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-md-8 bg-body-secondary">
+							<div class="col-md-8 bg-body-secondary ">
 								<div class="topic-content float-start p-2">
-
-									<p><?php echo $singleTopic->body; ?></p>
-
-									<a class="btn btn-danger p-1" href="delete.php?id=<?php echo $singleTopic->id; ?>" role="button">Delete</a>
-									<a class="btn btn-warning p-1" href="update.php?id=<?php echo $singleTopic->id; ?>" role="button">Update</a>
-
+									<p><?php echo $singleTopic->body; ?></p> 
 								</div>
+
+								<?php if(isset($_SESSION['username'])) : ?>
+
+									   	<?php if($singleTopic->user_name == $_SESSION['username']) : ?>
+										<a class="btn btn-danger p-1" role="button" href="../delete.php?id=<?php echo $singleTopic->id; ?>" >Delete</a>
+										<a class="btn btn-warning p-1" href="../update.php?id=<?php echo $singleTopic->id; ?>" role="button">Update</a>
+										<?php endif; ?>
+									<?php endif; ?>
+ 
 							</div>
-							
 						</div>
 					</li>
 
