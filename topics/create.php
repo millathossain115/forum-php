@@ -82,7 +82,7 @@ if(!isset($_SESSION['username'])){
                                     <!-- =======CK Editor======= -->
 									
                                     <!-- <textarea id="body" rows="10" cols="80" class="form-control mb-3" name="body"></textarea> -->
-                                    <textarea  name="body" placeholder="" class="form-control mb-3" rows="12" cols="50"></textarea>
+                                    <textarea  name="body" placeholder="" class="form-control mb-3" rows="8" cols="50"></textarea>
 									<!-- <script>CKEDITOR.replace('body');</script> -->
                                     <script>
                                         window.onload = function() {

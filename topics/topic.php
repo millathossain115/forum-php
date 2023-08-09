@@ -99,6 +99,7 @@
 
 
 								<?php if(isset($_SESSION['username'])):?>
+
 									<?php if($singleTopic->user_name==$_SESSION['username']): ?>
 										<a class="btn btn-danger p-1" role="button" href="delete.php?id=<?php echo $singleTopic->id; ?>" >Delete</a>
 										<a class="btn btn-warning p-1" href="update.php?id=<?php echo $singleTopic->id; ?>" role="button">Update</a>
@@ -165,7 +166,7 @@
 							CKEDITOR.replace( 'reply' );
             			</script> -->
 
-                        <textarea id="reply"  name="reply" placeholder="Write here" class="form-control mb-3" rows="12" cols="50"></textarea>
+                        <textarea id="reply"  name="reply" placeholder="Write here" class="form-control mb-3" rows="8" cols="50"></textarea>
 									<!-- <script>CKEDITOR.replace('body');</script> -->
                                     <script>
                                         window.onload = function() {
