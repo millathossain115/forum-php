@@ -11,7 +11,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Welcome To Forum</title>
+    <title>Welcome To AutoWhiZ</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -34,7 +35,7 @@
 
       <!-- Navbar Started -->
 
-      <nav class="navbar navbar-expand-lg rounded-2 p-3 mx-1 shadow" style="background-color: #fff;">
+      <nav class="navbar navbar-expand-lg rounded-2 p-2 mx-1 shadow" style="background-color: #fff;">
         <div class="container-fluid">
            <a class="navbar-brand m-0 p-0" href="<?php echo APPURL; ?>"">
       		<img src="2.png" alt="" width="45" height="45" class="ms-4" href="">

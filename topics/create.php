@@ -17,11 +17,12 @@ if(!isset($_SESSION['username'])){
         $category = $_POST['category'];
         $body = $_POST['body'];
         $user_name = $_SESSION['name'];
+        $user_image = $_SESSION['user_image'];
 
 
         // $dir = "img/".basename($avatar);
 
-        $insert = $conn->prepare("INSERT INTO topics ( title, category, body, user_name) VALUES (:title, :category, :body, :user_name)");
+        $insert = $conn->prepare("INSERT INTO topics ( title, category, body, user_name, user_image) VALUES (:title, :category, :body, :user_name, :user_image)");
 
         $insert->execute([
 
@@ -29,6 +30,7 @@ if(!isset($_SESSION['username'])){
             ":category" => $category,
             ":body" => $body,
             ":user_name" => $user_name,
+            ":user_image" => $user_image,
 
             
         ]);

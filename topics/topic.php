@@ -69,13 +69,13 @@
 										<a class="btn btn-danger p-1" role="button" href="../delete.php?id=<?php echo $singleTopic->id; ?>" >Delete</a>
 										<a class="btn btn-warning p-1" href="../update.php?id=<?php echo $singleTopic->id; ?>" role="button">Update</a>
 										<?php endif; ?>
-									<?php endif; ?>
+								<?php endif; ?>
  
 							</div>
 						</div>
 					</li>
 
-					<?php foreach( $allReplies as $reply) : ?>
+					<?php foreach($allReplies as $reply) : ?>
 
 					<li class="topic topic">
 						<div class="row border-start border-bottom border-top rounded-start-3 my-2">
