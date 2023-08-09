@@ -2,6 +2,7 @@
 <?php require "../config/config.php"; ?>
 <?php 
 
+
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
 
@@ -55,7 +56,7 @@
             
         ]);
 
-        header("location: ".APPURL."/topics/topic.php?id=".$id."");
+        header("location: ".APPURL."../topics/topic.php?id=".$id."");
     }
 }
 
@@ -95,19 +96,26 @@
 							<div class="col-md-8 bg-body-secondary ">
 								<div class="topic-content float-start p-2">
 									<p><?php echo $singleTopic->body; ?></p> 
+
+
+								<?php if(isset($_SESSION['username'])):?>
+									<?php if($singleTopic->user_name==$_SESSION['username']): ?>
+										<a class="btn btn-danger p-1" role="button" href="delete.php?id=<?php echo $singleTopic->id; ?>" >Delete</a>
+										<a class="btn btn-warning p-1" href="update.php?id=<?php echo $singleTopic->id; ?>" role="button">Update</a>
+									<?php endif; ?>
+								<?php endif; ?>
+
+
 								</div>
 
-								<?php if(isset($_SESSION['username'])) : ?>
-
-									   	<?php if($singleTopic->user_name == $_SESSION['username']) : ?>
-										<a class="btn btn-danger p-1" role="button" href="../delete.php?id=<?php echo $singleTopic->id; ?>" >Delete</a>
-										<a class="btn btn-warning p-1" href="../update.php?id=<?php echo $singleTopic->id; ?>" role="button">Update</a>
-										<?php endif; ?>
-								<?php endif; ?>
+										
  
 							</div>
 						</div>
 					</li>
+
+					
+<!-- ====================Replies to topic=============== -->
 
 					<?php foreach($allReplies as $reply) : ?>
 
@@ -126,6 +134,15 @@
 							<div class="col-md-8 bg-body-secondary">
 								<div class="topic-content float-start p-2">
 									<p><?php echo $reply->reply; ?></p>
+									
+									<?php if(isset($_SESSION['username'])):?>
+
+									<?php if($reply->user_id==$_SESSION['user_id']): ?>
+
+										<a class="btn btn-danger p-1" role="button" href="../replies/delete.php?id=<?php echo $reply->id; ?>" >Delete</a>
+										<a class="btn btn-warning p-1" href="../replies/update.php?id=<?php echo $reply->id; ?>" role="button">Update</a>
+									<?php endif; ?>
+								<?php endif; ?>
 								</div>
 							</div>
 						</div>
@@ -136,9 +153,10 @@
 					
 
 
-				</ul>
+				</ul>				
 
-				<h4 class="ms-3 mb-0 mt-4">Reply To Topic</h4>
+
+			<h4 class="ms-3 mb-0 mt-4">Reply To Topic</h4>
                 <hr class="mx-3">
 				<form role="form" method="POST" action="topic.php?id=<?php echo $id; ?>">				
   					<div class="form-group fw-bold mb-2 mt-2 mx-3">

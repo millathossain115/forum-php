@@ -37,7 +37,7 @@
 
       <nav class="navbar navbar-expand-lg rounded-2 p-2 mx-1 shadow" style="background-color: #fff;">
         <div class="container-fluid">
-           <a class="navbar-brand m-0 p-0" href="<?php echo APPURL; ?>"">
+           <a class="navbar-brand m-0 p-0" href="<?php echo APPURL; ?>">
       		<img src="2.png" alt="" width="45" height="45" class="ms-4" href="">
     	    </a>
           <button
