@@ -25,6 +25,40 @@
 	}
 
 
+	if (isset($_POST['submit'])) {
+         if(empty($_POST["reply"]) ) {
+        
+        echo "<script>alert('one or more input fields are empty');</script>";
+        
+    }else{
+        
+        $reply = $_POST['reply'];
+        $user_id = $_SESSION['user_id'];
+		$user_image = $_SESSION['user_image'];
+        $topic_id = $id;
+        $user_name = $_SESSION['username'];
+        
+
+
+        // $dir = "img/".basename($avatar);
+
+        $insert = $conn->prepare("INSERT INTO replies ( reply, user_id, user_image, topic_id, user_name) VALUES (:reply, :user_id, :user_image, :topic_id, :user_name)");
+
+        $insert->execute([
+
+            ":reply" => $reply,
+            ":user_id" => $user_id,
+            ":user_image" => $user_image,
+            ":topic_id" => $topic_id,
+            ":user_name" => $user_name,
+
+            
+        ]);
+
+        header("location: ".APPURL."/topics/topic.php?id=".$id."");
+    }
+}
+
 ?>
 
     <div class="container mt-4">
@@ -106,7 +140,7 @@
 
 				<h4 class="ms-3 mb-0 mt-4">Reply To Topic</h4>
                 <hr class="mx-3">
-				<form role="form">				
+				<form role="form" method="POST" action="topic.php?id=<?php echo $id; ?>">				
   					<div class="form-group fw-bold mb-2 mt-2 mx-3">
 						<!-- <textarea id="reply" rows="10" cols="80" class="form-control" name="reply"></textarea>
 						<script>
@@ -121,7 +155,7 @@
                                         };
                                     </script>
   					</div>
- 					 <button type="submit" class="btn btn-primary mb-3 mt-4 ms-3">Submit</button>
+ 					 <button type="submit" name="submit" class="btn btn-primary mb-3 mt-4 ms-3">Submit</button>
 				</form>
 					</div>
 				</div>
