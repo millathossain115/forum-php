@@ -28,7 +28,7 @@
 						<a href="#" class="list-group-item active mx-1 rounded-2">All Topics <span class="badge float-end bg-white text-dark rounded-pill fw-bolder"><?php echo $allTopics->all_topics;?></span></a> 
 
 						<?php foreach($allCategories as $category ): ?>
-						<a href="#" class="list-group-item"><?php echo $category->name; ?><span class="badge float-end rounded-pill bg-primary text-white me-2"><?php echo $category->count_category; ?></span></a>
+						<a href="<?php echo APPURL; ?>/categories/show.php?name=<?php echo $category->name; ?>" class="list-group-item"><?php echo $category->name; ?><span class="badge float-end rounded-pill bg-primary text-white me-2"><?php echo $category->count_category; ?></span></a>
 						<?php endforeach; ?>
 
 						
