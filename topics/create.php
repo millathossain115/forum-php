@@ -69,11 +69,11 @@ if(!isset($_SESSION['username'])){
 								<label  mb-3class="fw-bold mb-2 mt-2">Category</label>
 								<select class="form-control mb-3" name="category">
 									
-									<option value="Design">Design</option>
-									<option value="Development">Development</option>
+									<option value="Search">Search</option>
+									<option value="New Arrival">New Arrival</option>
+									<option value="Repair & Modify">Repair & Modify</option>
 									<option value="Business & Marketing">Business & Marketing</option>
-									<option value="Search Engines">Search Engines</option>
-									<option value="Cloud & Hosting">Cloud & Hosting</option>
+                                    <option value="Off Topic">Off Topic</option>
 							</select>
 							</div>
 								<div class="form-group">

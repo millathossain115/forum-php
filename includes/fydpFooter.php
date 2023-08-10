@@ -1,4 +1,13 @@
-			<!-- Sidebar counted as footer1 -->
+<?php 
+
+	$topics = $conn->query("SELECT COUNT(*) AS all_topics FROM topics");
+	$topics->execute();
+
+	$allTopics = $topics->fetch(PDO::FETCH_OBJ);
+?>
+
+
+<!-- Sidebar counted as footer1 -->
 			<div class="col-md-12 col-lg-4">
 			<div class="sidebar">		
 					
@@ -7,13 +16,13 @@
                     <hr class="fw-bolder text-dark mx-2">
 
 					<div class="list-group block ">
-						<a href="#" class="list-group-item active mx-1 rounded-2">All Topics <span class="badge float-end bg-white text-dark rounded-pill">14</span></a> 
+						<a href="#" class="list-group-item active mx-1 rounded-2">All Topics <span class="badge float-end bg-white text-dark rounded-pill fw-bolder"><?php echo $allTopics->all_topics;?></span></a> 
 
-						<a href="#" class="list-group-item">Design<span class="badge float-end rounded-pill bg-primary text-white me-2">4</span></a>
-						<a href="#" class="list-group-item">Development<span class="badge float-end rounded-pill bg-primary text-white me-2">9</span></a>
-						<a href="#" class="list-group-item">Business & Marketing <span class="badge float-end rounded-pill bg-primary text-white me-2">12</span></a>
-						<a href="#" class="list-group-item">Search Engines<span class="badge float-end rounded-pill bg-primary text-white me-2">7</span></a>
-						<a href="#" class="list-group-item">Cloud & Hosting <span class="badge float-end rounded-pill bg-primary text-white me-2">3</span></a>
+						<a href="#" class="list-group-item">Search<span class="badge float-end rounded-pill bg-primary text-white me-2">4</span></a>
+						<a href="#" class="list-group-item">New Arrival<span class="badge float-end rounded-pill bg-primary text-white me-2">9</span></a>
+						<a href="#" class="list-group-item">Repair & Modify <span class="badge float-end rounded-pill bg-primary text-white me-2">12</span></a>
+						<a href="#" class="list-group-item">Business & Marketing<span class="badge float-end rounded-pill bg-primary text-white me-2">7</span></a>
+						<a href="#" class="list-group-item">Off Topic <span class="badge float-end rounded-pill bg-primary text-white me-2">3</span></a>
 					</div>
 				</div>
 
