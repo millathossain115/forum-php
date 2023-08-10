@@ -4,6 +4,15 @@
 	$topics->execute();
 
 	$allTopics = $topics->fetch(PDO::FETCH_OBJ);
+
+
+	//fetch number of category according to topic
+	$categories= $conn->query("SELECT categories.id AS id, categories.name AS name, COUNT(topics.category) AS count_category FROM categories LEFT JOIN topics ON categories.name = topics.category GROUP BY (topics.category)");
+
+	$categories->execute();
+	$allCategories = $categories->fetchAll(PDO::FETCH_OBJ);
+
+
 ?>
 
 
@@ -18,11 +27,11 @@
 					<div class="list-group block ">
 						<a href="#" class="list-group-item active mx-1 rounded-2">All Topics <span class="badge float-end bg-white text-dark rounded-pill fw-bolder"><?php echo $allTopics->all_topics;?></span></a> 
 
-						<a href="#" class="list-group-item">Search<span class="badge float-end rounded-pill bg-primary text-white me-2">4</span></a>
-						<a href="#" class="list-group-item">New Arrival<span class="badge float-end rounded-pill bg-primary text-white me-2">9</span></a>
-						<a href="#" class="list-group-item">Repair & Modify <span class="badge float-end rounded-pill bg-primary text-white me-2">12</span></a>
-						<a href="#" class="list-group-item">Business & Marketing<span class="badge float-end rounded-pill bg-primary text-white me-2">7</span></a>
-						<a href="#" class="list-group-item">Off Topic <span class="badge float-end rounded-pill bg-primary text-white me-2">3</span></a>
+						<?php foreach($allCategories as $category ): ?>
+						<a href="#" class="list-group-item"><?php echo $category->name; ?><span class="badge float-end rounded-pill bg-primary text-white me-2"><?php echo $category->count_category; ?></span></a>
+						<?php endforeach; ?>
+
+						
 					</div>
 				</div>
 
