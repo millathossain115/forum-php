@@ -14,10 +14,20 @@
 
 	//Forum statistics
 
+	//Number of users
 	$users = $conn->query("SELECT COUNT(*) AS count_users FROM users");
 	$users->execute();
-
 	$allUsers = $users->fetch(PDO::FETCH_OBJ);
+	
+	//Number of topics
+	$topics_count = $conn->query("SELECT COUNT(*) AS topics_count FROM topics");
+	$topics_count->execute();
+	$allTopics_count = $topics_count->fetch(PDO::FETCH_OBJ);
+	
+	//Number of categories
+	$categories_count = $conn->query("SELECT COUNT(*) AS categories_count FROM categories");
+	$categories_count->execute();
+	$allCategories_count = $categories_count->fetch(PDO::FETCH_OBJ);
 
 ?>
 
@@ -49,8 +59,8 @@
 
 						<div class="list-group">
 							<a href="#" class="list-group-item">Total Number of Users:<span class="badge float-end rounded-pill bg-primary text-white me-2"><?php echo $allUsers->count_users;?></span></a>
-							<a href="#" class="list-group-item">Total Number of Topics:<span class="badge float-end rounded-pill bg-primary text-white me-2">9</span></a>
-							<a href="#" class="list-group-item">Total Number of Categories: <span class="badge float-end rounded-pill bg-primary text-white me-2">12</span></a>
+							<a href="#" class="list-group-item">Total Number of Topics:<span class="badge float-end rounded-pill bg-primary text-white me-2"><?php echo $allTopics_count->topics_count;?></span></a>
+							<a href="#" class="list-group-item">Total Number of Categories: <span class="badge float-end rounded-pill bg-primary text-white me-2"><?php echo $allCategories_count->categories_count;?></span></a>
 							
 						</div>
 				    </div>
