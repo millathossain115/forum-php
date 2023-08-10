@@ -2,9 +2,11 @@
 <?php require "../config/config.php"; ?>
 <?php 
 
-if(!isset($_SESSION['username'])){
-    header("location: ".APPURL."");
-}
+    if(!isset($_SESSION['username'])){
+        header("location: ".APPURL."");
+    }
+
+
 
     if (isset($_POST['submit'])) {
          if(empty($_POST["title"]) or empty($_POST["category"]) or empty($_POST["body"]) ) {
@@ -40,6 +42,11 @@ if(!isset($_SESSION['username'])){
     
     }
 
+    $categories_select =  $conn->query("SELECT* FROM categories");
+	$categories_select->execute();
+
+	$all_categories_select = $categories_select->fetchAll(PDO::FETCH_OBJ);
+
 ?>
 
 
@@ -62,18 +69,21 @@ if(!isset($_SESSION['username'])){
 
 						<form class="px-3" role="form" method="POST" action="../topics/create.php">
 							<div class="form-group">
-								<label  mb-3class="fw-bold mb-2 mt-2">Topic Title</label>
+								<label  class="fw-bold mb-2 mt-2">Topic Title</label>
 								<input type="text" class="form-control mb-3" name="title" placeholder="Enter Post Title">
 							</div>
 							<div class="form-group">
-								<label  mb-3class="fw-bold mb-2 mt-2">Category</label>
+								<label  class="fw-bold mb-2 mt-2">Category</label>
 								<select class="form-control mb-3" name="category">
 									
-									<option value="Search">Search</option>
-									<option value="New Arrival">New Arrival</option>
+                                    <?php foreach($all_categories_select as $categories_select): ?>
+									<option value="<?php echo $categories_select->name; ?>"><?php echo $categories_select->name; ?></option>
+                                    <?php endforeach;?>
+
+									<!-- <option value="New Arrival">New Arrival</option>
 									<option value="Repair & Modify">Repair & Modify</option>
 									<option value="Business & Marketing">Business & Marketing</option>
-                                    <option value="Off Topic">Off Topic</option>
+                                    <option value="Off Topic">Off Topic</option> -->
 							</select>
 							</div>
 								<div class="form-group">
@@ -91,7 +101,7 @@ if(!isset($_SESSION['username'])){
                                     </script>
 
 								</div>
-							<button type="submit" name="submit" class="btn btn-primary mb-3 mt-4">Create</button>
+							<button type="submit" name="submit" class="btn btn-primary mb-3 mt-2">Create</button>
 						</form>
 					</div>
 				</div>
