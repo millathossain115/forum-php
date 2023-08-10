@@ -10,7 +10,10 @@
 
 	    $topics->execute();
 	    $a11Topics = $topics->fetchAll(PDO::FETCH_OBJ);
-    }
+    }else {
+		header("location: ".APPURL."/404.php");
+	}
+
 	
 
 ?>
