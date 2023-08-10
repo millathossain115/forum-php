@@ -12,12 +12,12 @@ if(!isset($_SESSION['username'])){
 
 	    	$id = $_GET['id'];
 
-		    $select =  $conn->query("SELECT* FROM topics WHERE id='$id' ");
+		    $select =  $conn->query("SELECT* FROM users WHERE id='$id' ");
 		    $select->execute();
 
-		    $topic = $select->fetch(PDO::FETCH_OBJ);
+		    $user = $select->fetch(PDO::FETCH_OBJ);
 
-            if($topic->user_name !== $_SESSION['username']){
+            if($user->id !== $_SESSION['user_id']){
                 header("location: ".APPURL."");
             }
             
@@ -25,28 +25,28 @@ if(!isset($_SESSION['username'])){
 
 
     if (isset($_POST['submit'])) {
-         if(empty($_POST["title"]) or empty($_POST["category"]) or empty($_POST["body"]) ) {
+         if(empty($_POST["email"]) or empty($_POST["about"]) ) {
         
         echo "<script>alert('one or more input fields are empty');</script>";
         
     }else{
         
-        $title = $_POST['title'];
-        $category = $_POST['category'];
-        $body = $_POST['body'];
-        $user_name = $_SESSION['name'];
+        $email = $_POST['email'];
+        $about = $_POST['about'];
+        // $body = $_POST['body'];
+        // $user_name = $_SESSION['name'];
 
 
         // $dir = "img/".basename($avatar);
 
-        $update = $conn->prepare("UPDATE topics SET title =:title, category=:category,body=:body,user_name=:user_name ");
+        $update = $conn->prepare("UPDATE users SET email =:email, about=:about WHERE id='$id'");
 
         $update->execute([
 
-            ":title" => $title,
-            ":category" => $category,
-            ":body" => $body,
-            ":user_name" => $user_name,
+            ":email" => $email,
+            ":about" => $about,
+            // ":body" => $body,
+            // ":user_name" => $user_name,
 
             
         ]);
@@ -76,28 +76,19 @@ if(!isset($_SESSION['username'])){
 						<hr class="mx-3 mb-3">
 
 
-						<form class="px-3" role="form" method="POST" action="../topics/update.php?id=<?php echo $id; ?>">
+						<form class="px-3" role="form" method="POST" action="edit_user.php?id=<?php echo $id; ?>">
 							<div class="form-group">
-								<label  mb-3class="fw-bold mb-2 mt-2">Topic Title</label>
-								<input type="text" value="<?php echo $topic->title; ?>" class="form-control mb-3" name="title" placeholder="Enter Post Title">
+								<label  class="fw-bold mb-2 mt-2">Email</label>
+								<input type="text" value="<?php echo $user->email; ?>" class="form-control mb-3" name="email" placeholder="Enter email">
 							</div>
-							<div class="form-group">
-								<label  mb-3class="fw-bold mb-2 mt-2">Category</label>
-								<select class="form-control mb-3" name="category">
-									<option value="Design">Design</option>
-									<option value="Development">Development</option>
-									<option value="Business & Marketing">Business & Marketing</option>
-									<option value="Search Engines">Search Engines</option>
-									<option value="Cloud & Hosting">Cloud & Hosting</option>
-							</select>
-							</div>
+							
 								<div class="form-group">
-									<label  class="fw-bold mb-2 mt-2">Topic Body</label>
+									<label  class="fw-bold mb-2 mt-2">About</label>
                                     
                                     <!-- =======CK Editor======= -->
 									
                                     <!-- <textarea id="body" rows="10" cols="80" class="form-control mb-3" name="body"></textarea> -->
-                                    <textarea  name="body" placeholder="" class="form-control mb-3" rows="12" cols="50"><?php echo $topic->body; ?></textarea>
+                                    <textarea  name="about" placeholder="" class="form-control mb-3" rows="6" cols="50"><?php echo $user->about; ?></textarea>
 									<!-- <script>CKEDITOR.replace('body');</script> -->
                                     <script>
                                         window.onload = function() {

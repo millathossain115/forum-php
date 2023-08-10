@@ -78,17 +78,17 @@ if(!isset($_SESSION['username'])){
 
 						<form class="px-3" role="form" method="POST" action="../topics/update.php?id=<?php echo $id; ?>">
 							<div class="form-group">
-								<label  mb-3class="fw-bold mb-2 mt-2">Topic Title</label>
+								<label  class="fw-bold mb-2 mt-2">Topic Title</label>
 								<input type="text" value="<?php echo $topic->title; ?>" class="form-control mb-3" name="title" placeholder="Enter Post Title">
 							</div>
 							<div class="form-group">
-								<label  mb-3class="fw-bold mb-2 mt-2">Category</label>
+								<label  class="fw-bold mb-2 mt-2">Category</label>
 								<select class="form-control mb-3" name="category">
-									<option value="Design">Design</option>
-									<option value="Development">Development</option>
+									<option value="Search">Search</option>
+									<option value="New Arrival">New Arrival</option>
+									<option value="Repair & Modify">Repair & Modify</option>
 									<option value="Business & Marketing">Business & Marketing</option>
-									<option value="Search Engines">Search Engines</option>
-									<option value="Cloud & Hosting">Cloud & Hosting</option>
+									<option value="Off Topic">Off Topic</option>
 							</select>
 							</div>
 								<div class="form-group">
