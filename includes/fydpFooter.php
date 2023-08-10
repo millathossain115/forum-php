@@ -12,6 +12,12 @@
 	$categories->execute();
 	$allCategories = $categories->fetchAll(PDO::FETCH_OBJ);
 
+	//Forum statistics
+
+	$users = $conn->query("SELECT COUNT(*) AS count_users FROM users");
+	$users->execute();
+
+	$allUsers = $users->fetch(PDO::FETCH_OBJ);
 
 ?>
 
@@ -42,7 +48,7 @@
             <!-- <hr class="fw-bolder text-dark mx-4"> -->
 
 						<div class="list-group">
-							<a href="#" class="list-group-item">Total Number of Users:<span class="badge float-end rounded-pill bg-primary text-white me-2">4</span></a>
+							<a href="#" class="list-group-item">Total Number of Users:<span class="badge float-end rounded-pill bg-primary text-white me-2"><?php echo $allUsers->count_users;?></span></a>
 							<a href="#" class="list-group-item">Total Number of Topics:<span class="badge float-end rounded-pill bg-primary text-white me-2">9</span></a>
 							<a href="#" class="list-group-item">Total Number of Categories: <span class="badge float-end rounded-pill bg-primary text-white me-2">12</span></a>
 							
