@@ -50,16 +50,17 @@
 
 							<div class="col-md-2 ">
 								
-								<img class="avatar pull-left h-75 w-75 mx-3 mt-2 rounded-circle p-2" src="../forum/img/<?php echo $topic->user_image ; ?>" />
+								<img class="avatar pull-left h-75 w-75 mx-3 mt-2 rounded-circle p-2" src="../img/<?php echo $topic->user_image ; ?>" />
 							</div>
 
 							<div class="col-md-10 ">
 								<div class="">
-									<h5 class="mt-3 mb-0"><a class="text-decoration-none" href="../forum/topics/topic.php?id=<?php echo $topic->id; ?>" > <?php echo $topic->title; ?></a></h5>
+									<h5 class="mt-3 mb-0"><a class="text-decoration-none" href="../topics/topic.php?id=<?php echo $topic->id; ?>" > <?php echo $topic->title; ?></a></h5>
 
 									<div class="topic-info">
-										<a class="text-decoration-none" href="category.html"><?php echo $topic->category; ?></a> >> <a class="text-decoration-none" href="profile.html"><?php echo $topic->user_name ; ?></a> >> Posted on: <?php echo $topic->created_at ; ?> 
-										<span class="badge rounded-pill text-bg-primary float-end me-4"><?php echo $topic->count_replies ; ?></span>
+										<a class="text-decoration-none" href="<?php echo APPURL; ?>../categories/show.php?name=<?php echo $topic->category; ?>"><?php echo $topic->category; ?></a> >> <a class="text-decoration-none" href="profile.html"><?php echo $topic->user_name ; ?></a> >> Posted on: <?php echo $topic->created_at ; ?> 
+										
+
 									</div>
 
 								</div>
