@@ -79,8 +79,10 @@
                   <?php echo $_SESSION['username']; ?>
                 </a>
                 <ul class="dropdown-menu">
+                
+                  <li><a class="dropdown-item" href="<?php echo APPURL; ?>/users/profile.php?name=<?php echo $_SESSION['username']; ?>">Public Profile</a></li>
+
                   <li><a class="dropdown-item" href="<?php echo APPURL; ?>/users/edit_user.php?id=<?php echo $_SESSION['user_id']; ?>">Edit Profile</a></li>
-                  <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
                   <li><hr class="dropdown-divider" /></li>
                   <li>
                     <a class="dropdown-item" href="<?php echo APPURL; ?>/auth/logout.php">logout</a>
