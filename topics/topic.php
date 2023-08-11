@@ -92,7 +92,7 @@
 										<li><strong><?php echo $singleTopic->user_name; ?></strong></li>
 										<li><?php echo $count->count_topics; ?> Posts</li>
 
-										<li><a href="../users/profile.php?name=<?php echo $singleTopic->user_name; ?>">Profile</a>
+										<li><a href="<?php echo APPURL; ?>/users/profile.php?name=<?php echo $topic->user_name; ?>">Profile</a>
 
 									</ul>
 								</div>

@@ -56,7 +56,7 @@
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
             <li class="nav-item mx-3">
-                <a class="nav-link active" aria-current="page" href="<?php echo APPURL; ?>index.php">Home</a>
+                <a class="nav-link active" aria-current="page" href="<?php echo APPURL; ?>../index.php">Home</a>
               </li>
 
             <?php if(isset($_SESSION['username'])) : ?>

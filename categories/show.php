@@ -61,7 +61,8 @@
 									<h5 class="mt-3 mb-0"><a class="text-decoration-none" href="../topics/topic.php?id=<?php echo $topic->id; ?>" > <?php echo $topic->title; ?></a></h5>
 
 									<div class="topic-info">
-										<a class="text-decoration-none" href="<?php echo APPURL; ?>../categories/show.php?name=<?php echo $topic->category; ?>"><?php echo $topic->category; ?></a> >> <a class="text-decoration-none" href="profile.html"><?php echo $topic->user_name ; ?></a> >> Posted on: <?php echo $topic->created_at ; ?> 
+										<a class="text-decoration-none" href="<?php echo APPURL; ?>../categories/show.php?name=<?php echo $topic->category; ?>"><?php echo $topic->category; ?></a> >> 
+										<a class="text-decoration-none" href="<?php echo APPURL; ?>/users/profile.php?name=<?php echo $topic->user_name ; ?>"><?php echo $topic->user_name ; ?></a> >> Posted on: <?php echo $topic->created_at ; ?> 
 										
 
 									</div>

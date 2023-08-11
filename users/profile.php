@@ -62,7 +62,7 @@ if(!isset($_SESSION['username'])){
 									<ul class="list-unstyled">
 										<li><strong><?php echo $user->username; ?></strong></li>
 										<li>10 Posts</li>
-										<li><a href="../users/profile.php?name=<?php echo $_SESSION['username']; ?>">Profile</a>
+										<li><a href="../users/profile.php?name=<?php echo $user->username; ?>">Profile</a>
 									</ul>
 								</div>
 							</div>
