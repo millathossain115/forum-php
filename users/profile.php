@@ -17,6 +17,19 @@ if(!isset($_SESSION['username'])){
 		    $select->execute();
 
 		    $user = $select->fetch(PDO::FETCH_OBJ);
+
+
+        //Number of Topics created by User
+        $num_topics =  $conn->query("SELECT COUNT(*) AS num_topics FROM topics WHERE user_name='$name' ");
+		    $num_topics->execute();
+
+		    $all_num_topics = $num_topics->fetch(PDO::FETCH_OBJ);
+
+        //Number of replies created by User
+        $num_replies =  $conn->query("SELECT COUNT(*) AS num_replies FROM replies WHERE user_name='$name' ");
+		    $num_replies->execute();
+
+		    $all_num_replies = $num_replies->fetch(PDO::FETCH_OBJ);
 }
 
 ?>
@@ -49,7 +62,7 @@ if(!isset($_SESSION['username'])){
 									<ul class="list-unstyled">
 										<li><strong><?php echo $user->username; ?></strong></li>
 										<li>10 Posts</li>
-										<li><a href="profile.php?name=<?php echo $_SESSION['username']; ?>">Profile</a>
+										<li><a href="../users/profile.php?name=<?php echo $_SESSION['username']; ?>">Profile</a>
 									</ul>
 								</div>
 							</div>
@@ -57,8 +70,8 @@ if(!isset($_SESSION['username'])){
 								<div class="topic-content float-start p-2">
 									<p><?php echo $user->about; ?></p> 
 
-									<a class="btn btn-success p-1" role="button" href="" >Number Of Post: 12</a>
-									<a class="btn btn-info p-1" href="" role="button">Number of Replies: 100</a>
+									<a class="btn btn-success p-1" role="button" href="" >Number Of Topics: <?php echo $all_num_topics->num_topics; ?></a>
+									<a class="btn btn-info p-1" href="" role="button">Number of Replies: <?php echo $all_num_replies->num_replies; ?></a>
 
 								</div>
 							</div>
