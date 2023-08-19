@@ -1,5 +1,6 @@
 <?php require "../admin-panel/layouts/header.php"; ?>
-<?php //require "../config/config.php"; ?>
+<?php //require "../../config/config.php"; ?>
+
 
 
     <div class="container-fluid  mx-auto ms-lg-5">
@@ -45,9 +46,16 @@
               
               <p class="card-text">Total Replies: 3</p>
               
-            </div>
+             </div>
           </div>
         </div>
       </div>
 
-<?php require "../admin-panel//layouts/footer.php"; ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<?php require "../admin-panel/layouts/footer.php"; ?>

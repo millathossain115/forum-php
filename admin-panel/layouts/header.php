@@ -16,7 +16,7 @@
       <div class="container-fluid">
      
         <a class="navbar-brand" href="#">
-          <img src="../admin-logo.png" alt="" width="29" height="29" class="ms-4" href="">
+          <img src="admin-logo.png" alt="" width="29" height="29" class="ms-4" href="">
           <span class="fw-bold" style="color: #FF1700;">Auto</span><span class="" style="color: #F7EA00;">whiZ</span></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
