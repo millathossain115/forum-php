@@ -1,3 +1,10 @@
+<?php 
+
+  session_start();
+  define("ADMINURL","http://localhost/forum/admin-panel");
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -62,10 +69,10 @@
 
           <li class="nav-item dropdown">
             <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
-              username
+              <?php echo $_SESSION['adminname']; ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item text-light p-0 px-2" href="#">Logout</a>
+              <a class="dropdown-item text-dark p-0 px-2" href="<?php echo ADMINURL; ?>/admins/logout.php">Logout</a>
               
           </li>
                           
