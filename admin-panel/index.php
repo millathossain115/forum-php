@@ -1,6 +1,12 @@
 <?php require "../admin-panel/layouts/header.php"; ?>
 <?php //require "../../config/config.php"; ?>
+<?php 
 
+if(!isset($_SESSION['adminname'])){
+    header("location: ".ADMINURL."/admins/login-admins.php");
+}
+
+?>
 
 
     <div class="container-fluid  mx-auto ms-lg-5">

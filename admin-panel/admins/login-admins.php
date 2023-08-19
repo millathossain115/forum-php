@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 
 
 ?>
-<section class="container mt-4">
+
  <div class="container-fluid"> 
       <div class="row">
         <div class="col">

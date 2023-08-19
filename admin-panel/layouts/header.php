@@ -12,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin AutowhiZ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="styles/style.css" rel="stylesheet">
+    
+    <link href="<?php echo ADMINURL; ?>/styles/style.css" rel="stylesheet">
   </head>
   <body>
     
@@ -31,8 +32,8 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <?php if(isset($_SESSION['adminname'])): ?>
         <ul class="navbar-nav side-nav bg-dark text-white" >
-
           <li class="nav-item">
             <a class="nav-link text-light" style="margin-left: 20px;" href="index.html">Home
               <span class="visually-hidden">(current)</span>
@@ -51,7 +52,7 @@
             <a class="nav-link text-light" href="replies-admins/show-replies.html" style="margin-left: 20px;">Replies</a>
           </li>
         </ul>
-
+          <?php endif; ?>
 
 <!-- Side Nav Ended -->
 
@@ -60,15 +61,15 @@
     <?php if(!isset($_SESSION['adminname'])): ?>
 
         <li class="nav-item">
-            <a class="nav-link text-light" href="../admin-panel/admins/login-admins.php">login
+            <a class="nav-link text-light" href="<?php echo ADMINURL; ?>/admins/login-admins.php">login
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
-          
+
     <?php else: ?>
 
           <li class="nav-item">
-            <a class="nav-link text-light" href="index.html">Home
+            <a class="nav-link text-light" href="<?php echo ADMINURL; ?>">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
