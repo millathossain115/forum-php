@@ -3,7 +3,7 @@
 
 <?php 
 
-    $admins =  $conn->query("SELECT* FROM admins");
+  $admins =  $conn->query("SELECT* FROM admins");
 	$admins->execute();
 	$allAdmins = $admins->fetchAll(PDO::FETCH_OBJ);
  
@@ -15,7 +15,7 @@
           <div class="card shadow">
             <div class="card-body">
               <h5 class="card-title mb-4 d-inline">Admins</h5>
-             <a  href="create-admins.html" class="btn btn-primary mb-4 float-end">Create Admins</a>
+             <a  href="<?php echo ADMINURL; ?>/admins/create-admins.php" class="btn btn-primary mb-4 float-end">Create Admins</a>
               <table class="table">
                 <thead>
                   <tr>
