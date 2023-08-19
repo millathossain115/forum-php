@@ -35,7 +35,7 @@
         <?php if(isset($_SESSION['adminname'])): ?>
         <ul class="navbar-nav side-nav bg-dark text-white" >
           <li class="nav-item">
-            <a class="nav-link text-light" style="margin-left: 20px;" href="index.html">Home
+            <a class="nav-link text-light" style="margin-left: 20px;" href="<?php echo ADMINURL; ?>">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
@@ -43,7 +43,7 @@
             <a class="nav-link text-light" href="<?php echo ADMINURL; ?>/admins/admins.php" style="margin-left: 20px;">Admins</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="categories-admins/show-categories.html" style="margin-left: 20px;">Categories</a>
+            <a class="nav-link text-light" href="<?php echo ADMINURL; ?>/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="topics-admins/show-topics.html" style="margin-left: 20px;">Topics</a>
