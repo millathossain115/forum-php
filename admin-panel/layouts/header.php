@@ -56,16 +56,23 @@
 <!-- Side Nav Ended -->
 
         <ul class="navbar-nav mx-auto">
+
+    <?php if(!isset($_SESSION['adminname'])): ?>
+
+        <li class="nav-item">
+            <a class="nav-link text-light" href="../admin-panel/admins/login-admins.php">login
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          
+    <?php else: ?>
+
           <li class="nav-item">
             <a class="nav-link text-light" href="index.html">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="admins/login-admins.html">login
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
+          
 
           <li class="nav-item dropdown">
             <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
@@ -76,7 +83,8 @@
               
           </li>
                           
-          
+        <?php endif; ?>    
+
         </ul>
       </div>
     </div>
