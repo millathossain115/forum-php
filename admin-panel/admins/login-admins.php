@@ -27,11 +27,7 @@ if (isset($_POST['submit'])) {
 
             $_SESSION['adminname'] = $fetch['adminname'];
             $_SESSION['email'] = $fetch['email'];
-            // $_SESSION['user_id'] = $fetch['id'];
-            // $_SESSION['email'] = $fetch['email'];
-            // $_SESSION['user_image'] = $fetch['avatar'];
-            // $_SESSION['username'] = $fetch['username'];
-
+          
             header("location: ".ADMINURL."");
             
             // echo "<script>alert('LOGGED IN');</script>";
