@@ -20,7 +20,7 @@ if(!isset($_SESSION['adminname'])){
           <div class="card shadow">
             <div class="card-body">
               <h5 class="card-title mb-4 d-inline">Categories</h5>
-             <a  href="create-category.html" class="btn btn-primary mb-4 text-center float-end">Create Categories</a>
+             <a  href="<?php echo ADMINURL; ?>/categories-admins/create-category.php" class="btn btn-primary mb-4 text-center float-end">Create Categories</a>
               <table class="table">
                 <thead>
                   <tr>
