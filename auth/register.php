@@ -58,7 +58,7 @@ if(isset($_SESSION['username'])){
 					<div class="block shadow-lg shadow-md rounded-3">
                         
               <h4 class="float-start mt-3 mb-0 ms-3">Register</h4>
-						  <h6 class="float-end mt-3 mb-0 me-3 text-muted">A Simple Forum</h6>          
+						  <h6 class="float-end mt-3 mb-0 me-3 text-muted">An AutowhiZ Forum</h6>          
 						  <div class="clearfix"></div>
               <div></div>
                         
