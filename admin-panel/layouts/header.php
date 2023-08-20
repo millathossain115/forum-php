@@ -47,7 +47,7 @@
             <a class="nav-link text-light" href="<?php echo ADMINURL; ?>/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="topics-admins/show-topics.html" style="margin-left: 20px;">Topics</a>
+            <a class="nav-link text-light" href="<?php echo ADMINURL; ?>/topics-admins/show-topics.php" style="margin-left: 20px;">Topics</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="replies-admins/show-replies.html" style="margin-left: 20px;">Replies</a>
