@@ -3,9 +3,9 @@
 <?php 
 
 
-  if(!isset($_SESSION['adminname'])){
-      header("location: ".ADMINURL."/admins/login-admins.php");
-  }
+    if(!isset($_SESSION['adminname'])){
+        header("location: ".ADMINURL."/admins/login-admins.php");
+    }
   
     $topics =  $conn->query("SELECT* FROM topics");
 	$topics->execute();
@@ -18,7 +18,7 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-body">
-              <h5 class="card-title mb-4 d-inline">Topics</h5>
+              <h5 class="card-title mb-4 d-inline mt-3">Topics</h5>
             
               <table class="table">
                 <thead>
@@ -37,7 +37,7 @@
                     <td><?php echo $topic->title; ?></td>
                     <td><?php echo $topic->category; ?></td>
                     <td><?php echo $topic->user_name; ?></td>
-                     <td><a href="delete-posts.php?id=<?php echo $topic->id; ?>" class="btn btn-danger  text-center ">delete</a></td>
+                     <td><a href="delete-topic.php?id=<?php echo $topic->id; ?>" class="btn btn-danger  text-center ">delete</a></td>
                   </tr>
                   <?php endforeach; ?>
                   <!-- <tr>

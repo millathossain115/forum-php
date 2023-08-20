@@ -50,7 +50,7 @@
             <a class="nav-link text-light" href="<?php echo ADMINURL; ?>/topics-admins/show-topics.php" style="margin-left: 20px;">Topics</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="replies-admins/show-replies.html" style="margin-left: 20px;">Replies</a>
+            <a class="nav-link text-light" href="<?php echo ADMINURL; ?>/replies-admins/show-replies.php" style="margin-left: 20px;">Replies</a>
           </li>
         </ul>
           <?php endif; ?>
