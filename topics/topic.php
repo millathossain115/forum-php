@@ -6,6 +6,7 @@
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
 
+		// data for each topic
 		$topic =  $conn->query("SELECT* FROM topics WHERE id='$id' ");
 		$topic->execute();
 		$singleTopic = $topic->fetch(PDO::FETCH_OBJ);
@@ -66,7 +67,7 @@
 
     <div class="container mt-4 mb-3">
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-lg-8">
 				<div class="main-col">
 					<div class="block shadow-lg shadow-md rounded-2">
 
@@ -102,9 +103,9 @@
 									<p><?php echo $singleTopic->body; ?></p> 
 
 
-								<?php if(isset($_SESSION['username'])):?>
+								<?php if(isset($_SESSION['username'])) : ?>
 
-									<?php if($singleTopic->user_name==$_SESSION['username']): ?>
+									<?php if($singleTopic->user_name == $_SESSION['username']): ?>
 										<a class="btn btn-danger p-1" role="button" href="delete.php?id=<?php echo $singleTopic->id; ?>" >Delete</a>
 										<a class="btn btn-warning p-1" href="update.php?id=<?php echo $singleTopic->id; ?>" role="button">Update</a>
 									<?php endif; ?>

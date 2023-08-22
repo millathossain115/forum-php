@@ -46,7 +46,7 @@
 							<?php foreach($a11Topics as $topic) : ?>
 
 							<li class="topic">
-							<div class="row  h-25  mx-3 rounded-3 border my-2">
+							<div class="row  h-25  mx-3 rounded-3 border my-2" id="box">
 
 							<div class="col-md-2 ">
 								
@@ -58,7 +58,9 @@
 									<h5 class="mt-3 mb-0"><a class="text-decoration-none" href="../forum/topics/topic.php?id=<?php echo $topic->id; ?>" > <?php echo $topic->title; ?></a></h5>
 
 									<div class="topic-info">
-										<a class="text-decoration-none" href="<?php echo APPURL; ?>../categories/show.php?name=<?php echo $topic->category; ?>"> <?php echo $topic->category; ?></a> >> <a class="text-decoration-none" href="profile.html"><?php echo $topic->user_name ; ?></a> >> Posted on: <?php echo $topic->created_at ; ?> 
+										<a class="text-decoration-none" href="<?php echo APPURL; ?>../categories/show.php?name=<?php echo $topic->category; ?>"> <?php echo $topic->category; ?></a> >> 
+										
+										<a class="text-decoration-none" href="../forum/404.php"><?php echo $topic->user_name ; ?></a> >> Posted on: <?php echo $topic->created_at ; ?> 
 										<span class="badge rounded-pill text-bg-primary float-end me-4"><?php echo $topic->count_replies ; ?></span>
 									</div>
 
@@ -67,11 +69,6 @@
 						</div>
 							</li>
 							<?php endforeach;?>
-							
-							<!--================== Topic 1 ==================-->						
-							<!--================== Topic 2 ==================-->						
-							<!--================== Topic 3 ==================-->				
-							<!--================== Topic 4 ==================-->
 			
 						</ul>
 						<hr class="fw-bolder text-white mx-4">

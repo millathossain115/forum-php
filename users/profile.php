@@ -20,7 +20,7 @@ if(!isset($_SESSION['username'])){
 
 
         //Number of Topics created by User
-        $num_topics =  $conn->query("SELECT COUNT(*) AS num_topics FROM topics WHERE user_name='$name' ");
+        	$num_topics =  $conn->query("SELECT COUNT(*) AS num_topics FROM topics WHERE user_name='$name' ");
 		    $num_topics->execute();
 
 		    $all_num_topics = $num_topics->fetch(PDO::FETCH_OBJ);
@@ -61,7 +61,7 @@ if(!isset($_SESSION['username'])){
 									<img class="avatar float-start mx-3 mb-3 rounded-1" src="../img/<?php echo $user->avatar; ?>"  width="75" height="75"/>
 									<ul class="list-unstyled">
 										<li><strong><?php echo $user->username; ?></strong></li>
-										<li>10 Posts</li>
+										<li><?php echo $all_num_topics->num_topics; ?> Posts</li>
 										<li><a href="../users/profile.php?name=<?php echo $user->username; ?>">Profile</a>
 									</ul>
 								</div>

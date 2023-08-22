@@ -55,9 +55,9 @@ if (isset($_POST['submit'])) {
 
     <div class="container mt-4">
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-lg-8">
 				<div class="main-col">
-					<div class="block shadow-lg shadow-md rounded-2">
+					<div class="block shadow-lg shadow-md rounded-2 mb-3">
 
 						<h4 class="float-start mt-3 mb-0 ms-3">Login</h4>
 						<h6 class="float-end mt-3 mb-0 me-3 text-muted">An AutowhiZ Forum</h6>

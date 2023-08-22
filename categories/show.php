@@ -9,7 +9,7 @@
         $topics = $conn->query("SELECT* FROM topics WHERE category = '$name'");
 
 	    $topics->execute();
-	    $a11Topics = $topics->fetchAll(PDO::FETCH_OBJ);
+	    $allTopics = $topics->fetchAll(PDO::FETCH_OBJ);
     }else {
 		header("location: ".APPURL."/404.php");
 	}
@@ -46,7 +46,7 @@
 						<!--================== Topic 0 ==================-->
 						
 						<ul class="list-unstyled" id="topics">
-							<?php foreach($a11Topics as $topic) : ?>
+							<?php foreach($allTopics as $topic) : ?>
 
 							<li class="topic">
 							<div class="row  h-25  mx-3 rounded-3 border my-2">

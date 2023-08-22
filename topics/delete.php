@@ -6,7 +6,7 @@ if(isset($_GET['id'])){
 		$id = $_GET['id'];
 
             $select =  $conn->query("SELECT* FROM topics WHERE id='$id' ");
-		    $select->execute();
+		    $select->execute(); 
 		    $topic = $select->fetch(PDO::FETCH_OBJ);
 
             if($topic->user_name !== $_SESSION['username']){
